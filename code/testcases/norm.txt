@@ -1,0 +1,133 @@
+PerspectiveCamera {
+    center 0 1 40.6
+    direction -0. -0.0 -1
+    up 0 1 0
+    angle 40
+    width 512
+    height 512
+}
+
+Lights {
+    numLights 2
+    DirectionalLight {
+        direction -0.5 -0.3 -1
+        color 0.9 0.9 0.9 
+    }
+    DirectionalLight {
+        direction 0.5 0.3 1
+        color 0.9 0.9 0.9 
+    }
+}
+
+Background {
+    color 0.0 0.0 0.0 
+}
+
+Materials {
+    numMaterials 12
+    Material { 
+        diffuseColor 0.75 0.25 0.25
+        diff_coef 1
+    }
+    Material { 
+        diffuseColor 0.25 0.25 0.75 
+        diff_coef 1
+    }
+    Material { 
+        diffuseColor 0.75 0.75 0.75
+        diff_coef 1
+    }
+    Material { 
+        diffuseColor  1 1 1
+        diff_coef 1
+    }
+    Material {
+        diffuseColor 1 1 1
+        spec_coef 1
+    }
+    Material {
+        diffuseColor 1 1 1
+        spec_coef 0.1
+        refractivity 0.9
+        refractIndex 1.5
+    }
+    Material {
+        diffuseColor 0 0 0
+        diff_coef 1
+        emission 5 5 5
+    }
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+        roughness 0.5
+        refractIndex 15
+    }
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+        shininess 1
+    }
+
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+        roughness 0.8           
+        refractIndex 1.0
+        texture mesh/texture-green-paper-pattern-scratch-background-photo-hd-wallpaper.jpg
+    }
+
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+        texture mesh/grass_texture225.jpg
+    }
+
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+        texture mesh/wildtextures-leather-Campo-rose.jpg
+    }
+
+}
+
+Group {
+    numObjects 7
+    MaterialIndex 0
+    
+    TriangleMesh {
+        obj_file mesh/left.obj
+    }
+    
+    MaterialIndex 1
+    TriangleMesh {
+        obj_file mesh/right.obj
+    }
+    MaterialIndex 2
+    TriangleMesh {
+        obj_file mesh/floor.obj
+    }
+    MaterialIndex 3
+    TriangleMesh {
+        obj_file mesh/ceiling.obj
+    }
+    MaterialIndex 3
+    TriangleMesh {
+        obj_file mesh/face.obj
+    }
+    
+    MaterialIndex 6
+    TriangleMesh {
+        obj_file mesh/light.obj
+    }
+    MaterialIndex 5
+    RevSurface {
+        profile BezierCurve {
+            controls
+                [ -2 2 0 ] 
+                [ -4 0 0 ]  
+                [ 0 0 0 ]   
+                [ -2 -2 0 ] 
+        }
+    }
+
+}

@@ -1,0 +1,122 @@
+PerspectiveCamera {
+    center 50 66 305.6
+    direction 0 0 -1
+    up 0 1 0
+    angle 40
+    width 512
+    height 512
+}
+
+Lights {
+    numLights 2
+    DirectionalLight {
+        direction -0.5 -0.3 -1
+        color 0.9 0.9 0.9 
+    }
+    DirectionalLight {
+        direction 0.5 0.3 1
+        color 0.9 0.9 0.9 
+    }
+}
+
+Background {
+    color 0 0 0 
+}
+
+Materials {
+    numMaterials 9
+    Material { 
+        diffuseColor 0.75 0.25 0.25
+        diff_coef 1
+    }
+    Material { 
+        diffuseColor 0.25 0.25 0.75 
+        diff_coef 1
+    }
+    Material { 
+        diffuseColor 0.75 0.75 0.75
+        diff_coef 1
+    }
+    Material { 
+        diffuseColor 1 1 1
+        diff_coef 1
+    }
+    Material {
+        diffuseColor 1 1 1
+        spec_coef 1
+    }
+    Material {
+        diffuseColor 1 1 1
+        spec_coef 0.1
+        refractivity 0.9
+        refractIndex 1.5
+    }
+    Material {
+        diffuseColor 0 0 0
+        diff_coef 1
+        emission 100 100 100
+    }
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+        roughness 0.2
+        refractIndex 12
+    }
+    Material {
+        diffuseColor 1 1 1
+        diff_coef 1
+    }
+}
+
+Group {
+    numObjects 10
+    MaterialIndex 0
+    
+    TriangleMesh {
+        obj_file mesh/left.obj
+    }
+    
+    MaterialIndex 1
+    TriangleMesh {
+        obj_file mesh/right.obj
+    }
+    MaterialIndex 2
+    TriangleMesh {
+        obj_file mesh/floor.obj
+    }
+    MaterialIndex 3
+    TriangleMesh {
+        obj_file mesh/ceiling.obj
+    }
+    MaterialIndex 2
+    TriangleMesh {
+        obj_file mesh/face.obj
+    }
+    
+    MaterialIndex 4
+    Sphere {
+        center 27 16.5 47
+        radius 16.5 
+    }
+
+    MaterialIndex 5
+    Sphere {
+      center 73 16.5 78
+      radius 16.5
+    }
+    MaterialIndex 7
+    Sphere {
+        center 27 8 78
+        radius 8 
+    }
+    MaterialIndex 8
+    Sphere {
+        center 50 8 110
+        radius 8 
+    }
+    MaterialIndex 6
+    TriangleMesh {
+        obj_file mesh/light.obj
+    }
+
+}
